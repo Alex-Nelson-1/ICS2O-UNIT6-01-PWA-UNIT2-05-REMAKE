@@ -8,15 +8,11 @@
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Alex Nelson" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
     <link
       rel="canonical"
       href="https://Alex-Nelson-1.github.io/ICS2O-UNIT6-01-PWA-UNIT2-05-REMAKE/"
     />
-    <link
-      rel="manifest"
-      href="/ICS2O-UNIT6-01-PWA-UNIT2-05-REMAKE/manifest.webmanifest"
-    />
+    <link rel="manifest" href="/ICS2O-UNIT6-01-PWA-UNIT2-05-REMAKE/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
@@ -47,36 +43,61 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <title>GitHub page as PWA template</title>
   </head>
-  <title>My first PWA</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header" style="text-align: center">
+        <div class="mdl-layout-header-row">
+          <span class="mdl-layout__title">Salary Calculator</span>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
-        <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
-        <!-- Raised button with ripple -->
+        <!--Text field accepts input for hours worked-->
+        <form action="#">
+          <h3>Hours Worked</h3>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="hoursWorked"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="hoursWorked"
+              >Hours Worked</label
+            >
+            <span class="mdl-textfield__error">Letters Only!</span>
+          </div>
+        </form>
+        <!--Text field accepts input for hourly wage-->
+        <form action="#">
+          <h3>Hourly Rate</h3>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="hourlyRate"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="hourlyRate"
+              >Hourly Rate</label
+            >
+            <span class="mdl-textfield__error">Letters Only!</span>
+          </div>
+        </form>
+        <!-- Accent-colored raised button that controls JS function -->
         <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+          onclick="calculatePay()"
         >
-          Say "Hello, World!"
+          Pay
         </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
+        <div id="pay"></div>
+        <div id="governmentPortion"></div>
       </main>
     </div>
   </body>
