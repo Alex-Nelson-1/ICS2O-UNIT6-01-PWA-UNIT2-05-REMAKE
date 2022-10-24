@@ -10,9 +10,12 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-UNIT6-01-PWA-UNIT2-05-REMAKE/sw.js", {
-    scope: "/ICS2O-UNIT6-01-PWA-UNIT2-05-REMAKE/",
-  })
+  navigator.serviceWorker.register(
+    "/ICS2O-UNIT6-01-PWA-UNIT2-05-REMAKE/sw.js",
+    {
+      scope: "/ICS2O-UNIT6-01-PWA-UNIT2-05-REMAKE/",
+    }
+  )
 }
 
 /**
